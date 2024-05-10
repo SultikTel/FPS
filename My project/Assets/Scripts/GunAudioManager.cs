@@ -4,16 +4,9 @@ using UnityEngine;
 
 public class GunAudioManager : MonoBehaviour
 {
-    public GunAudio[] audioList;
+    [SerializeField] private GunAudio[] audioList;
+    [SerializeField] private AudioSource audioSource;
 
-    private void Awake()
-    {
-        foreach(GunAudio gunAudio in audioList)
-        {
-            gunAudio.source = gameObject.AddComponent<AudioSource>();
-            gunAudio.source.clip = gunAudio.clip;
-        }
-    }
 
     public void Play(string name)
     {
@@ -22,6 +15,6 @@ public class GunAudioManager : MonoBehaviour
         {
             return;
         }
-        s.source.Play();
+        audioSource.PlayOneShot(s.clip);
     }
 }

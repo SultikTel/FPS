@@ -38,7 +38,14 @@ public class Gun : MonoBehaviour
             }
             
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.R) && !IsReloading)
+        {
+            Reload();
+
+
+        }
+
     }
 
     private void Shoot()

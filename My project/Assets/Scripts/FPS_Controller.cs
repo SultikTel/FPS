@@ -5,20 +5,17 @@ using UnityEngine;
 
 public class FPS_Controller : MonoBehaviour
 {
-    public Camera playerCamera;
+    [SerializeField] private Camera playerCamera;
     [SerializeField] private float walkSpeed = 6f;
     [SerializeField] private float runSpeed = 12f;
     [SerializeField] private float jumpPower = 4f;
     [SerializeField] private float lookSpeed = 7f;
-    [SerializeField] private float lookXLimit = 45f;
 
-
+    private float lookXLimit = 45f;
     float gravity = 10f;
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
-
     public bool canMove = true;
-
     public CharacterController characterController;
     
     // Start is called before the first frame update
